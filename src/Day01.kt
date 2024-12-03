@@ -19,11 +19,9 @@ fun main() {
         val sortedList1 = list1.sorted()
         val sortedList2 = list2.sorted()
 
-        val sums = (sortedList1 zip sortedList2).map{
+        return (sortedList1 zip sortedList2).sumOf {
             abs(it.first - it.second)
         }
-
-        return sums.sum()
     }
 
     fun part2(input: List<String>): Int {
@@ -33,9 +31,9 @@ fun main() {
             list2.count { itt -> itt == it }
         }
 
-        return (list1 zip countsList).map{
+        return (list1 zip countsList).sumOf {
             it.first * it.second
-        }.sum()
+        }
     }
 
     val input = readInput("Day01")
